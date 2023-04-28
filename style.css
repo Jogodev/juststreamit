@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+}
+
+header {
+    background-color: grey;
+    padding: 20px;
+
+}
+nav{
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: x-large;
+    display: inline-block;
+    padding: 15px;
+}
+
+nav a:first-of-type{
+    margin-right: 200px;
+    font-size: xx-large;
+}
+
+
+
+
+
