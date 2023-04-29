@@ -1,15 +1,16 @@
 body {
     background-color: black;
+    color: white;
 }
 
 header {
-    background-color: grey;
     padding: 20px;
-
 }
+
 nav{
     text-align: center;
 }
+
 nav a {
     color: white;
     text-decoration: none;
@@ -23,7 +24,33 @@ nav a:first-of-type{
     font-size: xx-large;
 }
 
+/*
+CARROUSEL
+*/
 
+.carrousel {
+    position: relative;
+}
+
+.carrousel_item {
+    float: left;
+}
+
+.carrousel_container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.carrousel_next, .carrousel_prev {
+    width: 40px;
+    height: 40px;
+    position absolute
+}
+
+.carrousel_prev {
+
+}
 
 
 
