@@ -1,8 +1,10 @@
+const api = "http://localhost:8000/api/v1/titles"
+
 async function bestMovie() {
-    let bestMovieRequest = await fetch(`${api_url}?sort_by=-imdb_score`);
+    let bestMovieRequest = await fetch(`${api}?sort_by=-imdb_score`);
     let bestMovieJson = await bestMovieRequest.json();
 
-    let bestMovieInfoRequest = await fetch(`${api_url}/${bestMovieJson.results[0].id}`);
+    let bestMovieInfoRequest = await fetch(`${api}/${bestMovieJson.results[0].id}`);
     let bestMovieInfoJson = await bestMovieInfoRequest.json();
     console.log(bestMovieInfoJson)
 

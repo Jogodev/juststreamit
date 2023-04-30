@@ -1,6 +1,9 @@
 body {
-    background-color: black;
     color: white;
+    font-family: sans-serif;
+    padding: 50px;
+    background: linear-gradient(45deg, #f37646, #f3e946) center center no-repeat;
+    line-height: 1.4;
 }
 
 header {
@@ -36,6 +39,11 @@ CARROUSEL
     float: left;
 }
 
+.carrousel_container {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+}
+
 .carrousel_container::after {
     content: '';
     clear: both;
@@ -45,12 +53,45 @@ CARROUSEL
 .carrousel_next, .carrousel_prev {
     width: 40px;
     height: 40px;
-    position absolute
+    position: absolute;
+    background: #FFF url(images/right.svg) center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    margin-top: -20px;
+    right: -20px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    transition: 0.3s, opacity 0.3s;
+    top: 50%;
 }
+
+.carrousel_next:hover, .carrousel_prev:hover {
+    transform: scale(1.2);
+}
+
 
 .carrousel_prev {
-
+    background-image: url(images/left.svg);
+    right: auto;
+    left: -20px;
 }
 
+.carrousel_next_hidden, .carrousel_prev_hidden {
+    opacity: 0;
+}
+
+.item {
+    margin: 40px 10px;
+    background-color: #fff;
+    box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
+    transition: transform 0.3s;
+    transform: translate3d(0, -1px, 0);
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 
