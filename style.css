@@ -2,15 +2,20 @@ body {
     color: white;
     font-family: sans-serif;
     padding: 50px;
-    background: linear-gradient(45deg, #f37646, #f3e946) center center no-repeat;
     line-height: 1.4;
+    background:linear-gradient(45deg, black 50%, midnightblue);
+}
+
+body section h2 {
+    color: red;
+    text-align: center;
 }
 
 header {
     padding: 20px;
 }
 
-nav{
+nav {
     text-align: center;
 }
 
@@ -22,7 +27,7 @@ nav a {
     padding: 15px;
 }
 
-nav a:first-of-type{
+nav a:first-of-type {
     margin-right: 200px;
     font-size: xx-large;
 }
@@ -83,7 +88,7 @@ CARROUSEL
 .item {
     margin: 40px 10px;
     background-color: #fff;
-    box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
     transition: transform 0.3s;
     transform: translate3d(0, -1px, 0);
 }
@@ -94,4 +99,59 @@ CARROUSEL
     height: auto;
 }
 
+.previous, .next {
+    cursor: pointer;
+    top: 50%;
+    width: 52px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: transparent;
+    border: 0;
+}
 
+/*
+Modal
+*/
+
+.modal {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 30px;
+    background-color: grey;
+    border-radius: 7px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_body {
+}
+
+#best_movie_button_info {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+
+#movie_button_info {
+    cursor: pointer;
+    display: block;
+}
+
+.close_button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: black;
+    color: white;
+}

@@ -120,19 +120,19 @@ class Carrousel {
 
 setTimeout(() => {
 
-    new Carrousel(document.querySelector("#carrousel_best_movies"), {
+    new Carrousel(document.querySelector("#best_movies"), {
         slidesToScroll: 1, slidesVisible: 4, loop: false,
     })
 
-    new Carrousel(document.querySelector("#carrousel_drama"), {
+    new Carrousel(document.querySelector("#mystery"), {
         slidesToScroll: 1, slidesVisible: 4,
     })
 
-    new Carrousel(document.querySelector("#carrousel_documentary"), {
+    new Carrousel(document.querySelector("#comedy"), {
         slidesToScroll: 1, slidesVisible: 4,
     })
 
-    new Carrousel(document.querySelector("#carrousel_comedy"), {
+    new Carrousel(document.querySelector("#thriller"), {
         slidesToScroll: 1, slidesVisible: 4,
     })
 }, 1000)
