@@ -1,4 +1,4 @@
-let api = "http://localhost:8000/api/v1/titles"
+const api = "http://localhost:8000/api/v1/titles"
 
 
 async function bestMovie() {
@@ -22,23 +22,26 @@ async function bestMovie() {
 }
 
 async function getMoviesByCategory(genre, id) {
+
     if (genre === 'best_movies') {
         let movies = await fetch(`${api}/?sort_by=-imdb_score&page_size=7`);
         let moviesJson = await movies.json();
         let dataMovies = moviesJson.results;
-        console.log(dataMovies);
         let section = document.querySelector(`#${id}`);
         for (let movie of dataMovies) {
             let movieDiv = document.createElement('div');
             movieDiv.innerHTML = `
+        <a id="${movie.id}">
         <img src="${movie.image_url}" alt="${movie.title}"/>
+        </a>
         <h1>${movie.title}</h1>
-        <button id="movie_button_info">Plus sur ce film</button>
     `;
             section.appendChild(movieDiv);
-            document.getElementById("movie_button_info").onclick = function () {
-                console.log('tio');
+            let movieDetailsJson = await movieDetails(movie)
+            document.getElementById(`${movie.id}`).onclick = function () {
+                createModal(movieDetailsJson);
             }
+
         }
     } else {
         let movies = await fetch(`${api}/?genre=${genre}&sort_by=-imdb_score&page_size=7`);
@@ -48,25 +51,26 @@ async function getMoviesByCategory(genre, id) {
         for (let movie of dataMovies) {
             let movieDiv = document.createElement('div');
             movieDiv.innerHTML = `
-        <img src="${movie.image_url}" alt="${movie.title}"/
+        <a id="${movie.id}">
+        <img src="${movie.image_url}" alt="${movie.title}"/>
+        </a>
         <h1>${movie.title}</h1>
-        <button id="movie_button_info">Plus sur ce film</button>
     `;
             section.appendChild(movieDiv);
-            // let movieCardDetails = movieDetails(dataMovies);
-            document.getElementById("movie_button_info").onclick = function () {
-                console.log(movie);
-                // createModal(movieCardDetails);
+            let movieDetailsJson = await movieDetails(movie)
+            document.getElementById(`${movie.id}`).onclick = function () {
+                createModal(movieDetailsJson);
             }
         }
     }
 }
 
-// async function movieDetails(dataMovies) {
-//     let movieRequest = await fetch(`${dataMovies.url}`)
-//     let movieRequestDetails = movieRequest.json();
-//     return movieRequestDetails;
-// }
+
+async function movieDetails(dataMovie) {
+    let movieRequest = await fetch(`${dataMovie.url}`)
+    let movieRequestDetails = await movieRequest.json();
+    return movieRequestDetails;
+}
 
 function createModal(movieDetails) {
     let modal = document.querySelector(".modal");
@@ -74,9 +78,19 @@ function createModal(movieDetails) {
     let closeButton = document.querySelector('.close_button');
 
     modal.style.display = "block"
-
     modalBody.innerHTML = `
     <h2>${movieDetails.title}</h2>
+    <img src="${movieDetails.image_url}" alt="${movieDetails.title}"/>
+    <p>Genre : ${movieDetails.genres}</p>
+    <p>Date de sortie : ${movieDetails.date_published}</p>
+    <p>Note : ${movieDetails.avg_vote}</p>
+    <p>Score imdb : ${movieDetails.imdb_score}</p>
+    <p>Réalisateur : ${movieDetails.directors}</p>
+    <p>Durée : ${movieDetails.duration} mn</p>
+    <p>Pays d'origine : ${movieDetails.countries}</p>
+    <p>Résultats au box office  : ${movieDetails.worldwide_gross_income}</p>
+    <p>Acteurs : ${movieDetails.actors}</p>
+    <p>Résumé : ${movieDetails.long_description}</p>
     `
     closeButton.onclick = function () {
         modal.style.display = "none";

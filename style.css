@@ -1,13 +1,11 @@
 body {
     color: white;
     font-family: sans-serif;
-    padding: 50px;
-    line-height: 1.4;
-    background:linear-gradient(45deg, black 50%, midnightblue);
+    background:linear-gradient(45deg, black 30%, midnightblue);
 }
 
 body section h2 {
-    color: red;
+    color: white;
     text-align: center;
 }
 
@@ -30,6 +28,27 @@ nav a {
 nav a:first-of-type {
     margin-right: 200px;
     font-size: xx-large;
+}
+
+.best_movie {
+    text-align: center;
+}
+
+.best_movie button{
+    border-radius: 2rem;
+    font-size: large;
+    color: white;
+    background:linear-gradient(45deg, black 30%, midnightblue);
+}
+
+.best_movie button:hover, button:focus{
+    background: white;
+    color: black;
+    transition: 1s ease-out;
+}
+
+section div a {
+    cursor: pointer;
 }
 
 /*
@@ -118,18 +137,31 @@ Modal
 .modal {
     display: none;
     width: 100%;
-    max-width: 500px;
-    min-width: 300px;
     padding: 30px;
-    background-color: grey;
-    border-radius: 7px;
-    position: absolute;
-    top: 40%;
+    max-width: 700px;
+    min-width: 300px;
+    max-height: 800px;
+    background:linear-gradient(45deg, black 30%, midnightblue);
+    top: 50%;
     left: 50%;
+    position: fixed;
     transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 10px;
 }
 
-.modal_body {
+.modal img{
+    border-radius: 10px;
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+.modal h2{
+    text-align: center;
+}
+
+.modal p {
+    padding-bottom: 5px;
 }
 
 #best_movie_button_info {
@@ -155,3 +187,4 @@ Modal
     background: black;
     color: white;
 }
+
