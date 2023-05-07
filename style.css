@@ -1,4 +1,12 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
 body {
+    padding: 50px;
     color: white;
     font-family: sans-serif;
     background:linear-gradient(45deg, black 30%, midnightblue);
@@ -47,6 +55,15 @@ nav a:first-of-type {
     transition: 1s ease-out;
 }
 
+section {
+    clear: both;
+    text-align: center;
+}
+
+section div {
+
+}
+
 section div a {
     cursor: pointer;
 }
@@ -93,7 +110,6 @@ CARROUSEL
     transform: scale(1.2);
 }
 
-
 .carrousel_prev {
     background-image: url(images/left.svg);
     right: auto;
@@ -134,22 +150,32 @@ CARROUSEL
 Modal
 */
 
+/*.modal {*/
+/*    display: none;*/
+/*    width: 100%;*/
+/*    padding: 30px;*/
+/*    max-width: 700px;*/
+/*    min-width: 300px;*/
+/*    max-height: 800px;*/
+/*    background:linear-gradient(45deg, black 30%, midnightblue);*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    position: fixed;*/
+/*    transform: translate(-50%, -50%);*/
+/*    z-index: 1;*/
+/*    border-radius: 10px;*/
+/*}*/
 .modal {
     display: none;
-    width: 100%;
-    padding: 30px;
-    max-width: 700px;
-    min-width: 300px;
-    max-height: 800px;
-    background:linear-gradient(45deg, black 30%, midnightblue);
-    top: 50%;
-    left: 50%;
     position: fixed;
-    transform: translate(-50%, -50%);
+    padding: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    border-radius: 10px;
+    background:linear-gradient(45deg, black 30%, midnightblue);
 }
-
 .modal img{
     border-radius: 10px;
     float: left;
