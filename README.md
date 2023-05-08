@@ -4,8 +4,8 @@
 
 
 ````bash
-$ git clone 
-$ cd chess_tournament
+$ git clone https://github.com/Jogodev/juststreamit.git
+$ cd juststreamit
 ````
 
 ## Installer l' API OCmovies
