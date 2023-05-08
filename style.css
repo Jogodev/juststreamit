@@ -6,7 +6,7 @@ body, html {
 }
 
 body {
-    padding: 50px;
+    padding: 30px;
     color: white;
     font-family: sans-serif;
     background:linear-gradient(45deg, black 30%, midnightblue);
@@ -42,6 +42,14 @@ nav a:first-of-type {
     text-align: center;
 }
 
+.best_movie img {
+    border-radius: 10px;
+}
+
+.best_movie img:hover{
+    border-radius: 10px;
+}
+
 .best_movie button{
     border-radius: 2rem;
     font-size: large;
@@ -70,10 +78,24 @@ CARROUSEL
 
 .carrousel {
     position: relative;
+    overflow-x: hidden;
 }
 
 .carrousel_item {
     float: left;
+}
+
+.carrousel_item div {
+
+}
+
+.carrousel_item img {
+    border-radius: 10px;
+}
+
+.carrousel_item img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }
 
 .carrousel_container {
@@ -91,16 +113,17 @@ CARROUSEL
     width: 40px;
     height: 40px;
     position: absolute;
-    background: #FFF url(images/right.svg) center center no-repeat;
+    background: #FFF url(images/right.svg) center no-repeat;
     background-size: 20px 20px;
     border-radius: 50%;
     margin-top: -20px;
-    right: -20px;
+    right: -0.5px;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
     cursor: pointer;
     transition: 0.3s, opacity 0.3s;
     top: 50%;
 }
+
 
 .carrousel_next:hover, .carrousel_prev:hover {
     transform: scale(1.2);
@@ -109,7 +132,7 @@ CARROUSEL
 .carrousel_prev {
     background-image: url(images/left.svg);
     right: auto;
-    left: -20px;
+    left: -1px;
 }
 
 .carrousel_next_hidden, .carrousel_prev_hidden {

@@ -34,7 +34,6 @@ async function getMoviesByCategory(genre, id) {
         <a id="${movie.id}">
         <img src="${movie.image_url}" alt="${movie.title}"/>
         </a>
-        <h1>${movie.title}</h1>
     `;
             section.appendChild(movieDiv);
             let movieDetailsJson = await movieDetails(movie)
@@ -54,7 +53,6 @@ async function getMoviesByCategory(genre, id) {
         <a id="${movie.id}">
         <img src="${movie.image_url}" alt="${movie.title}"/>
         </a>
-        <h1>${movie.title}</h1>
     `;
             section.appendChild(movieDiv);
             let movieDetailsJson = await movieDetails(movie)

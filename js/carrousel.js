@@ -44,7 +44,7 @@ class Carrousel {
             ]
             this.goToItem(this.offset, false)
         }
-        this.items.forEach(item =>this.container.appendChild(item))
+        this.items.forEach(item => this.container.appendChild(item))
         this.setStyle()
         this.createNavigation()
 
@@ -129,7 +129,7 @@ class Carrousel {
      * Déplace le carrousel de pour donner l'impression qu'il est infini
      *
      */
-    resetInfinite () {
+    resetInfinite() {
         if (this.currentItem <= this.options.slidesToScroll) {
             this.goToItem(this.currentItem + this.items.length - 2 * this.offset, false)
         } else if (this.currentItem >= this.items.length - this.offset) {
