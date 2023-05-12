@@ -1,7 +1,9 @@
 # Projet JustStreamIt
 
-## Cloner le projet
+## Prérequis
+### Python doit être installé sur votre machine
 
+## Cloner le projet
 
 ````bash
 $ git clone https://github.com/Jogodev/juststreamit.git

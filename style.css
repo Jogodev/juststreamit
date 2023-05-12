@@ -51,7 +51,9 @@ nav a:first-of-type {
 }
 
 .best_movie button{
-    border-radius: 2rem;
+    width: 160px;
+    height: 50px;
+    border-radius: 1rem;
     font-size: large;
     color: white;
     background:linear-gradient(45deg, black 30%, midnightblue);
@@ -85,17 +87,8 @@ CARROUSEL
     float: left;
 }
 
-.carrousel_item div {
-
-}
-
 .carrousel_item img {
     border-radius: 10px;
-}
-
-.carrousel_item img:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s;
 }
 
 .carrousel_container {
@@ -174,7 +167,6 @@ Modal
     width: 100%;
     padding: 30px;
     max-width: 700px;
-    min-width: 300px;
     max-height: 800px;
     background:linear-gradient(45deg, black 30%, midnightblue);
     top: 50%;
@@ -221,5 +213,41 @@ Modal
     cursor: pointer;
     background: black;
     color: white;
+}
+
+/*
+Media queries
+*/
+@media screen and (max-width: 768px) {
+    .modal {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .modal {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal {
+        top: 50%;
+        max-width: 250px;
+    }
+
+    .modal img{
+        border-radius: 10px;
+        width: 40%;
+    }
+
+    .modal h2{
+        text-align: center;
+        font-size: small;
+    }
+
+    .modal_body {
+        font-size: smaller;
+    }
 }
 

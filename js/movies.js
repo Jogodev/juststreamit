@@ -81,7 +81,7 @@ function createModal(movieDetails) {
     <img src="${movieDetails.image_url}" alt="${movieDetails.title}"/>
     <p>Genre : ${movieDetails.genres}</p>
     <p>Date de sortie : ${movieDetails.date_published}</p>
-    <p>Note : ${movieDetails.avg_vote}</p>
+    <p>Note : ${movieDetails.rated}</p>
     <p>Score imdb : ${movieDetails.imdb_score}</p>
     <p>Réalisateur : ${movieDetails.directors}</p>
     <p>Durée : ${movieDetails.duration} mn</p>
